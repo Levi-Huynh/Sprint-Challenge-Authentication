@@ -6,31 +6,52 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
-
+import './jokes.css';
+import { withStyles} from '@material-ui/core/styles';
 
 import axios from 'axios';
 import requiresAuth from '../auth/requiresAuth';
 
-class Jokes extends React.Component {
-    state = {
+const styles = theme => ({
+ cardMargin: {    
+   margin: '1rem',   
+  },
+});
+
+class Jokes extends React.Component   {
+  constructor(props) {
+    super(props);
+
+    this.state = {
        jokes: []
     };
+    
+  }
 
 
 render() {
+  const { classes } = this.props;
     return (
-        <div style={{ marginTop: 20, padding: 30 , width: 300,}}>
+     
+        <div style={{ marginTop: 20, padding: 30 }}>
+           <h2>Welcome to Dad Jokes</h2>
         <Grid container spacing={40}  justify="center">
-        <h2>Welcome to Dad Jokes</h2>
+       
  
-            {this.state.jokes.map(u=> (
-                  <Grid item key={u.id}           direction="row"
+            {this.state.jokes.map((u, index)=> (
+                  <Grid item key={u.id}           
+                  direction="row"
                   justify="center"
-                  alignItems="center">
+                  alignItems="center"
+                  md={3}
+                  margin='1rem'
+                >
              
-                       <Card>
+                       <Card 
+                       >
               <CardActionArea>
                 <CardMedia
+               
                   component="img"
                   alt="Contemplative Reptile"
                   height="140"
@@ -39,7 +60,7 @@ render() {
                 />
                <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                   Joke ID {u.id}
+                   Joke # {index}
                   </Typography>
                   <Typography component="p">{u.joke}</Typography>
                 </CardContent>
@@ -88,7 +109,9 @@ componentDidMount () {
 }
 }
 
-export default requiresAuth(Jokes);
+ export default requiresAuth(Jokes);
+
+
 
 // import React from 'react';
 // import axios from 'axios';

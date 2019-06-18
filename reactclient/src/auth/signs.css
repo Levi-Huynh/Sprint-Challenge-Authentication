@@ -1,0 +1,17 @@
+div .signinForm
+{
+    border: 2px solid black;
+    width: 200px;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    margin-left: 34rem;
+    opacity: 50%;
+    margin-top: 20px;
+    }
+
+    .wrapper{
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }

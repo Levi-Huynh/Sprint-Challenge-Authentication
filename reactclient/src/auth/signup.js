@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import './signs.css';
 
+var bg=require('../img/cup.jpg');
 class Signup extends React.Component {
     state={
         username: 'Jill',
@@ -8,7 +10,10 @@ class Signup extends React.Component {
     }
 render() {
     return (
-<>
+<div  className="wrapper"  style ={{ backgroundImage: "url("+bg+")",   backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'  }} >
+       <div className="signinForm"  >
 <h2>Signup</h2>
 <form onSubmit={this.submitForm}>
     <div>
@@ -30,7 +35,8 @@ render() {
    
     <div><button type="submit">Sign-Up</button></div>
 </form>
-</>
+</div>
+</div>
     );
 }
 

@@ -1,5 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import './signs.css';
+
+
+
+var bg=require('../img/cup2.jpg');
+
 
 class Signin extends React.Component {
     state={
@@ -7,10 +13,14 @@ class Signin extends React.Component {
         password: 'mellon'
     }
 render() {
+
     return (
-<>
+<div  className="wrapper" style ={{ backgroundImage: "url("+bg+")",  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat' }} >
+      <div className="signinForm"  >
 <h2>Login</h2>
-<form onSubmit={this.submitForm}>
+<form  onSubmit={this.submitForm}>
     <div>
         <label htmlFor="username"/>
         <input 
@@ -30,7 +40,8 @@ render() {
    
     <div><button type="submit">Login</button></div>
 </form>
-</>
+</div>
+</div>
     );
 }
 
