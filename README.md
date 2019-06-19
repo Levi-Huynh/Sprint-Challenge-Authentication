@@ -32,6 +32,9 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Sessions are a simple way to store data for individual users against a unique session ID. This can be used to persist state 
 information between page requests. 
 Session IDs are normally sent to the browser via session cookies and the ID is used to retrieve existing session data.
+Sessions provide a way to persist data across requests. We’ll use it to persist authentication information so there is no need to re-enter credentials on every new request the client makes to the server.
+
+#Now that we have a solution for keeping authentication information we need a way to transmit that information between the client and server. For that we’ll use cookies.
 
 1. What does bcrypt do to help us store passwords in a secure manner.
 The salt is usually included in the resulting hash-string in readable form. So with storing the hash-string you also store the salt. 

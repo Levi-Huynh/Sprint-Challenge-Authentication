@@ -12,11 +12,11 @@ import { withStyles} from '@material-ui/core/styles';
 import axios from 'axios';
 import requiresAuth from '../auth/requiresAuth';
 
-const styles = theme => ({
- cardMargin: {    
-   margin: '1rem',   
-  },
-});
+// const styles = theme => ({
+//  cardMargin: {    
+//    margin: '1rem',   
+//   },
+// });
 
 class Jokes extends React.Component   {
   constructor(props) {
@@ -30,12 +30,13 @@ class Jokes extends React.Component   {
 
 
 render() {
-  const { classes } = this.props;
+
     return (
      
         <div style={{ marginTop: 20, padding: 30 }}>
            <h2>Welcome to Dad Jokes</h2>
-        <Grid container spacing={40}  justify="center">
+           <div >
+        <Grid   container spacing={8}  justify="center">
        
  
             {this.state.jokes.map((u, index)=> (
@@ -75,8 +76,10 @@ render() {
               </CardActions>
             </Card>
           </Grid>
+      
         ))}
       </Grid>
+      </div>
     </div>
   );
 }
